@@ -1,4 +1,4 @@
-<?php include 'db.php'; ?>
+<?php include('db.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,14 +33,15 @@
         $email = $_POST['email'];
         $age = $_POST['age'];
 
-        $sql = "INSERT INTO users (name, email, age) VALUES ('$name', '$email', $age)";
-        print_r($sql);
-        if ($conn->query($sql) === TRUE) {
+        $sql = "INSERT INTO creat (name, email, age) VALUES ('$name', '$email', $age)";
+        $result = mysqli_query($con, $sql);
+        if ($con->query($sql) === TRUE) {
             echo "User created successfully!";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
+    $con->close();
     ?>
 </body>
 

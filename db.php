@@ -1,10 +1,13 @@
 <?php
-$host = "localhost";
-$username = "localhost";
-$password = '';
-$database = "core";
+$host = 'localhost'; // Hostname
+$username = 'root';  // Database username
+$password = '';      // Database password
+$database = 'core'; // Replace with your actual database name
 
-$con = new mysqli($host, $username, $password);
+// Create connection
+$con = new mysqli($host, $username, $password, $database);
+
+// Check connection
 if ($con->connect_error) {
-    die("connection failed" . $conn->connect_error);
+    die("Connection failed: " . $con->connect_error);
 }
