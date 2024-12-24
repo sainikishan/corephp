@@ -35,7 +35,10 @@
                 <td>{$row['age']}</td>
                 <td>
                     <a href='update.php?id={$row['id']}'>Edit</a> | 
-                    <a href='delete.php?id={$row['id']}'>Delete</a>
+                    <a href='delete.php?id={$row['id']}' 
+                       onclick='return confirm(\"Are you sure you want to delete this record?\")'>
+                       Delete
+                    </a>
                 </td>
               </tr>";
             }

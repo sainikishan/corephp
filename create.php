@@ -36,7 +36,9 @@
         $sql = "INSERT INTO creat (name, email, age) VALUES ('$name', '$email', $age)";
         $result = mysqli_query($con, $sql);
         if ($con->query($sql) === TRUE) {
-            echo "User created successfully!";
+            // echo "User created successfully!";
+            header("Location: index.php");
+            exit();
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
